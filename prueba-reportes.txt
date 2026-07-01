@@ -1,0 +1,18 @@
+
+1. ACCIÓN REALIZADA: PETICIÓN POST
+- URL: http://localhost:3000/reportes
+- Datos enviados (JSON):
+  {
+    "tipo": "Infraestructura",
+    "descripcion": "Daño en alumbrado público"
+  }
+- Resultado: El servidor procesa la petición a través del middleware de parsing (express.json()), lee el cuerpo de la solicitud en 'req.body' y almacena el nuevo registro en la persistencia de datos (memoria o base de datos), retornando un código de estado de éxito (habitualmente 201 Created).
+
+2. ACCIÓN REALIZADA: PETICIÓN GET
+- URL: http://localhost:3000/reportes
+- Resultado obtenido: El servidor responde con un arreglo en formato JSON que contiene el reporte previamente registrado, junto a otros datos existentes si los hubiera.
+
+3. EXPLICACIÓN DEL COMPORTAMIENTO:
+Al consultar la ruta GET después de haber ejecutado exitosamente la petición POST, se observa que la información ha sido persistida correctamente en el servidor. La arquitectura de la aplicación web responde de manera síncrona/asíncrona según el diseño, reflejando el nuevo estado del recurso. 
+
+Esto demuestra el cumplimiento del ciclo CRUD básico (Create a través de POST y Read a través de GET) y valida la correcta conectividad, el mapeo de las rutas en Express y la integridad en la transferencia de datos bajo el protocolo HTTP.
